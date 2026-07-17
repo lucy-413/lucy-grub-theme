@@ -15,7 +15,7 @@ BACKUP_DIR="/boot/grub2/theme-backups/${THEME_NAME}-${STAMP}"
 DEFAULTS_FILE="/etc/default/grub"
 GRUB_CFG="/boot/grub2/grub.cfg"
 
-for file in theme.txt background.png crt-overlay.png select_c.png lucygrub-mono-32.pf2; do
+for file in theme.txt background.png crt-overlay.png select_c.png select_w.png lucygrub-mono-32.pf2; do
     if [[ ! -f "${SOURCE_DIR}/${file}" ]]; then
         printf 'Missing built asset: %s\nRun ./build.sh first.\n' "${SOURCE_DIR}/${file}" >&2
         exit 1
@@ -46,6 +46,7 @@ install -m 0644 \
     "${SOURCE_DIR}/background.png" \
     "${SOURCE_DIR}/crt-overlay.png" \
     "${SOURCE_DIR}/select_c.png" \
+    "${SOURCE_DIR}/select_w.png" \
     "${SOURCE_DIR}/lucygrub-mono-32.pf2" \
     "${TARGET_DIR}/"
 install -m 0644 "${SOURCE_DIR}/icons/"*.png "${TARGET_DIR}/icons/"

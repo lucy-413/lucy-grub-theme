@@ -6,33 +6,34 @@ message-color: "#FB6F92"
 message-bg-color: "#000000"
 
 + label {
-    left = 0
+    left = 530
     top = 7%
-    width = 100%
+    width = 2380
     height = 50
-    text = "GNU GRUB [2.12]"
+    text = "> GNU GRUB [2.12]"
     font = "LucyGrub Mono Regular 32"
     color = "#A4133C"
-    align = "center"
+    align = "left"
 }
 
 + boot_menu {
-    left = 17%
-    top = 16%
-    width = 66%
-    height = 56%
+    left = 530
+    # Five 111 px rows with 89 px between them and at both frame edges.
+    top = 264
+    width = 2380
+    height = 911
 
     item_font = "LucyGrub Mono Regular 32"
     selected_item_font = "LucyGrub Mono Regular 32"
     item_color = "#A4133C"
     selected_item_color = "#FB6F92"
 
-    icon_width = 110
-    icon_height = 110
-    item_icon_space = 36
-    item_height = 142
-    item_padding = 18
-    item_spacing = 45
+    icon_width = 86
+    icon_height = 86
+    item_icon_space = 28
+    item_height = 111
+    item_padding = 0
+    item_spacing = 89
 
     selected_item_pixmap_style = "select_*.png"
     scrollbar = false

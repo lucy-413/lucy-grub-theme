@@ -1,25 +1,41 @@
 <svg width="3440" height="1440" viewBox="0 0 3440 1440" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <pattern id="scanlines" width="1" height="6" patternUnits="userSpaceOnUse">
-      <rect width="1" height="2" fill="#000000" opacity="0.26"/>
-      <rect y="2" width="1" height="1" fill="#FB6F92" opacity="0.025"/>
+      <rect width="1" height="2" fill="#000000" opacity="0.34"/>
+      <rect y="2" width="1" height="1" fill="#FB6F92" opacity="0.035"/>
     </pattern>
+
+    <!-- Broad, continuous shading makes the image read as curved CRT glass. -->
+    <radialGradient id="glass-vignette" cx="50%" cy="46%" r="72%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="68%" stop-color="#000000" stop-opacity="0.025"/>
+      <stop offset="86%" stop-color="#000000" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.72"/>
+    </radialGradient>
+
+    <linearGradient id="glass-highlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FB6F92" stop-opacity="0.045"/>
+      <stop offset="16%" stop-color="#FB6F92" stop-opacity="0.012"/>
+      <stop offset="42%" stop-color="#FB6F92" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
-  <!-- Drawn after the live GRUB menu so the CRT texture covers the whole UI. -->
+  <!-- Drawn after the live GRUB menu so the CRT glass covers the whole UI. -->
   <rect width="3440" height="1440" fill="url(#scanlines)"/>
+  <rect width="3440" height="1440" fill="url(#glass-highlight)"/>
+  <rect width="3440" height="1440" fill="url(#glass-vignette)"/>
 
-  <!-- Uneven signal-drop bands sell the analog distortion without hiding text. -->
-  <g fill="#000000" opacity="0.16">
-    <rect y="171" width="3440" height="5"/>
-    <rect y="374" width="3440" height="6"/>
-    <rect y="692" width="3440" height="4"/>
-    <rect y="1048" width="3440" height="7"/>
-    <rect y="1259" width="3440" height="6"/>
-  </g>
-  <g fill="#FB6F92" opacity="0.055">
-    <rect x="120" y="115" width="3120" height="2"/>
-    <rect x="260" y="905" width="2860" height="2"/>
-    <rect x="80" y="1338" width="3280" height="1"/>
-  </g>
+  <!-- A soft rounded tube edge, with no glitch bands or discontinuous offsets. -->
+  <rect
+    x="18"
+    y="16"
+    width="3404"
+    height="1408"
+    rx="104"
+    ry="82"
+    fill="none"
+    stroke="#000000"
+    stroke-width="36"
+    opacity="0.56"
+  />
 </svg>

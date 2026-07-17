@@ -1,0 +1,25 @@
+<svg width="3440" height="1440" viewBox="0 0 3440 1440" xmlns="http://www.w3.org/2000/svg">
+  <rect width="3440" height="1440" fill="#000000"/>
+
+  <!-- The menu stays live in GRUB; this SVG supplies only its clean frame. -->
+  <rect
+    x="530"
+    y="175"
+    width="2380"
+    height="1089"
+    rx="14"
+    fill="none"
+    stroke="#A4133C"
+    stroke-width="2"
+  />
+
+  <g
+    fill="#A4133C"
+    font-family="Source Code Pro"
+    font-size="24"
+    text-anchor="middle"
+  >
+    <text x="1720" y="1342">Use the ↑ and ↓ keys to select the highlighted entry.</text>
+    <text x="1720" y="1380">Press Enter to boot. Press &apos;e&apos; to edit or &apos;c&apos; for the command line.</text>
+  </g>
+</svg>
