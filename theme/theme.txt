@@ -1,0 +1,51 @@
+# lucygrub-terminal
+# Adapted from the 3440x1440 composition in src/figma-export.svg.
+
+desktop-image: "background.png"
+desktop-image-scale-method: "stretch"
+desktop-color: "#000000"
+title-text: ""
+message-color: "#FB6F92"
+message-bg-color: "#000000"
+
++ label {
+    left = 0
+    top = 7%
+    width = 100%
+    height = 50
+    text = "GNU GRUB [2.12]"
+    font = "LucyGrub Mono Regular 32"
+    color = "#A4133C"
+    align = "center"
+}
+
++ boot_menu {
+    left = 17%
+    top = 16%
+    width = 66%
+    height = 56%
+
+    item_font = "LucyGrub Mono Regular 32"
+    selected_item_font = "LucyGrub Mono Regular 32"
+    item_color = "#A4133C"
+    selected_item_color = "#FB6F92"
+
+    icon_width = 110
+    icon_height = 110
+    item_icon_space = 36
+    item_height = 142
+    item_padding = 18
+    item_spacing = 45
+
+    selected_item_pixmap_style = "select_*.png"
+    scrollbar = false
+}
+
+# Keep this last: the transparent texture is drawn over the live menu.
++ image {
+    left = 0
+    top = 0
+    width = 100%
+    height = 100%
+    file = "crt-overlay.png"
+}

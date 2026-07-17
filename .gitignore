@@ -1,0 +1,16 @@
+# Editor and operating-system noise
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Local build leftovers
+*.orig
+*.rej
+*.tmp
+*.log
+
+

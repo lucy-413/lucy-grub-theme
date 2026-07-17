@@ -1,0 +1,25 @@
+<svg width="3440" height="1440" viewBox="0 0 3440 1440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="scanlines" width="1" height="6" patternUnits="userSpaceOnUse">
+      <rect width="1" height="2" fill="#000000" opacity="0.26"/>
+      <rect y="2" width="1" height="1" fill="#FB6F92" opacity="0.025"/>
+    </pattern>
+  </defs>
+
+  <!-- Drawn after the live GRUB menu so the CRT texture covers the whole UI. -->
+  <rect width="3440" height="1440" fill="url(#scanlines)"/>
+
+  <!-- Uneven signal-drop bands sell the analog distortion without hiding text. -->
+  <g fill="#000000" opacity="0.16">
+    <rect y="171" width="3440" height="5"/>
+    <rect y="374" width="3440" height="6"/>
+    <rect y="692" width="3440" height="4"/>
+    <rect y="1048" width="3440" height="7"/>
+    <rect y="1259" width="3440" height="6"/>
+  </g>
+  <g fill="#FB6F92" opacity="0.055">
+    <rect x="120" y="115" width="3120" height="2"/>
+    <rect x="260" y="905" width="2860" height="2"/>
+    <rect x="80" y="1338" width="3280" height="1"/>
+  </g>
+</svg>
