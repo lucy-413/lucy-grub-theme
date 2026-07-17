@@ -1,6 +1,3 @@
-# lucygrub-terminal
-# Adapted from the 3440x1440 composition in src/figma-export.svg.
-
 desktop-image: "background.png"
 desktop-image-scale-method: "stretch"
 desktop-color: "#000000"
@@ -41,7 +38,6 @@ message-bg-color: "#000000"
     scrollbar = false
 }
 
-# Keep this last: the transparent texture is drawn over the live menu.
 + image {
     left = 0
     top = 0

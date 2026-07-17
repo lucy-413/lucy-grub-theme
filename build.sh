@@ -41,8 +41,6 @@ mkdir -p "${THEME_DIR}/icons"
 TMP_SVG="$(mktemp --suffix=.svg)"
 trap 'rm -f "${TMP_SVG}"' EXIT
 
-# Preserve the Figma frame, clear the placeholder rows/header, replace the
-# typoed outlined footer, and offset narrow bands for horizontal CRT tearing.
 sed \
     -e '/<svg /a\
 <g id="crt-screen">' \
