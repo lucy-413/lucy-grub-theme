@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <g fill="none" stroke="#A4133C" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- Eight teeth keep the gear crisp at GRUB's small menu-icon size. -->
+    <path d="M65 6h20l3 16a55 55 0 0 1 12 5l14-9 14 14-9 14a55 55 0 0 1 5 12l16 3v20l-16 3a55 55 0 0 1-5 12l9 14-14 14-14-9a55 55 0 0 1-12 5l-3 16H65l-3-16a55 55 0 0 1-12-5l-14 9-14-14 9-14a55 55 0 0 1-5-12L10 81V61l16-3a55 55 0 0 1 5-12l-9-14 14-14 14 9a55 55 0 0 1 12-5z"/>
+    <circle cx="75" cy="71" r="20"/>
+  </g>
+</svg>

@@ -1,41 +1,53 @@
-<svg width="3440" height="1440" viewBox="0 0 3440 1440" xmlns="http://www.w3.org/2000/svg">
+<svg width="@W@" height="@H@" viewBox="0 0 @W@ @H@" xmlns="http://www.w3.org/2000/svg">
+  <!-- Template: build.sh fills the tokens, scaled from the 3440x1440 reference design. -->
   <defs>
-    <pattern id="scanlines" width="1" height="6" patternUnits="userSpaceOnUse">
-      <rect width="1" height="2" fill="#000000" opacity="0.34"/>
-      <rect y="2" width="1" height="1" fill="#FB6F92" opacity="0.035"/>
+    <pattern id="scanlines" width="1" height="@SCAN_PITCH@" patternUnits="userSpaceOnUse">
+      <rect width="1" height="@SCAN_BLACK@" fill="#000000" opacity="0.34"/>
+      <rect y="@SCAN_BLACK@" width="1" height="@SCAN_PINK@" fill="#FB6F92" opacity="0.035"/>
     </pattern>
 
-    <!-- Broad, continuous shading makes the image read as curved CRT glass. -->
-    <radialGradient id="glass-vignette" cx="50%" cy="46%" r="72%">
+    <!-- A tighter, darker falloff makes the screen read as more strongly curved. -->
+    <radialGradient id="glass-vignette" cx="50%" cy="45%" r="67%">
       <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="68%" stop-color="#000000" stop-opacity="0.025"/>
-      <stop offset="86%" stop-color="#000000" stop-opacity="0.16"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.72"/>
+      <stop offset="58%" stop-color="#000000" stop-opacity="0.02"/>
+      <stop offset="76%" stop-color="#000000" stop-opacity="0.12"/>
+      <stop offset="90%" stop-color="#000000" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.88"/>
     </radialGradient>
 
     <linearGradient id="glass-highlight" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FB6F92" stop-opacity="0.045"/>
-      <stop offset="16%" stop-color="#FB6F92" stop-opacity="0.012"/>
-      <stop offset="42%" stop-color="#FB6F92" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FB6F92" stop-opacity="0.075"/>
+      <stop offset="13%" stop-color="#FB6F92" stop-opacity="0.025"/>
+      <stop offset="35%" stop-color="#FB6F92" stop-opacity="0"/>
     </linearGradient>
+
+    <filter id="corner-soften">
+      <feGaussianBlur stdDeviation="@CORNER_BLUR@"/>
+    </filter>
+
+    <!-- Everything outside the rounded screen shape goes dark; the shape itself stays clear. -->
+    <mask id="crt-corners">
+      <rect x="@BLEED_POS@" y="@BLEED_POS@" width="@BLEED_W@" height="@BLEED_H@" fill="#FFFFFF"/>
+      <rect width="@W@" height="@H@" rx="@CORNER_RX@" ry="@CORNER_RY@" fill="#000000"/>
+    </mask>
   </defs>
 
   <!-- Drawn after the live GRUB menu so the CRT glass covers the whole UI. -->
-  <rect width="3440" height="1440" fill="url(#scanlines)"/>
-  <rect width="3440" height="1440" fill="url(#glass-highlight)"/>
-  <rect width="3440" height="1440" fill="url(#glass-vignette)"/>
+  <rect width="100%" height="100%" fill="url(#scanlines)"/>
+  <rect width="100%" height="100%" fill="url(#glass-highlight)"/>
+  <rect width="100%" height="100%" fill="url(#glass-vignette)"/>
 
-  <!-- A soft rounded tube edge, with no glitch bands or discontinuous offsets. -->
-  <rect
-    x="18"
-    y="16"
-    width="3404"
-    height="1408"
-    rx="104"
-    ry="82"
-    fill="none"
-    stroke="#000000"
-    stroke-width="36"
-    opacity="0.56"
-  />
+  <!-- Curved glass corners: the masked fill extends past the canvas so the blur
+       feathers inward, giving a soft edge falloff instead of a drawn frame. -->
+  <g filter="url(#corner-soften)">
+    <rect
+      x="@BLEED_POS@"
+      y="@BLEED_POS@"
+      width="@BLEED_W@"
+      height="@BLEED_H@"
+      fill="#000000"
+      opacity="0.9"
+      mask="url(#crt-corners)"
+    />
+  </g>
 </svg>

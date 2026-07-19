@@ -1,25 +1,26 @@
-<svg width="3440" height="1440" viewBox="0 0 3440 1440" xmlns="http://www.w3.org/2000/svg">
-  <rect width="3440" height="1440" fill="#000000"/>
+<svg width="@W@" height="@H@" viewBox="0 0 @W@ @H@" xmlns="http://www.w3.org/2000/svg">
+  <!-- Template: build.sh fills the tokens, scaled from the 3440x1440 reference design. -->
+  <rect width="100%" height="100%" fill="#1A1A1A"/>
 
   <!-- The menu stays live in GRUB; this SVG supplies only its clean frame. -->
   <rect
-    x="530"
-    y="175"
-    width="2380"
-    height="1089"
-    rx="14"
+    x="@FRAME_X@"
+    y="@FRAME_Y@"
+    width="@FRAME_W@"
+    height="@FRAME_H@"
+    rx="@FRAME_RX@"
     fill="none"
     stroke="#A4133C"
-    stroke-width="2"
+    stroke-width="@FRAME_STROKE@"
   />
 
   <g
     fill="#A4133C"
     font-family="Source Code Pro"
-    font-size="24"
+    font-size="@HELP_FONT@"
     text-anchor="middle"
   >
-    <text x="1720" y="1342">Use the ↑ and ↓ keys to select the highlighted entry.</text>
-    <text x="1720" y="1380">Press Enter to boot. Press &apos;e&apos; to edit or &apos;c&apos; for the command line.</text>
+    <text x="@HELP_CX@" y="@HELP_Y1@">Use the ↑ and ↓ keys to select the highlighted entry.</text>
+    <text x="@HELP_CX@" y="@HELP_Y2@">Press Enter to boot. Press &apos;e&apos; to edit or &apos;c&apos; for the command line.</text>
   </g>
 </svg>
