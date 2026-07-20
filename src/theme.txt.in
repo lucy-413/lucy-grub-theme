@@ -6,6 +6,14 @@ title-text: ""
 message-color: "#FB6F92"
 message-bg-color: "#1A1A1A"
 
++ image {
+    left = 0
+    top = 0
+    width = 100%
+    height = 100%
+    file = "crt-overlay.png"
+}
+
 + label {
     left = @FRAME_X@
     top = 7%
@@ -38,12 +46,4 @@ message-bg-color: "#1A1A1A"
 
     selected_item_pixmap_style = "select_*.png"
     scrollbar = false
-}
-
-+ image {
-    left = 0
-    top = 0
-    width = 100%
-    height = 100%
-    file = "crt-overlay.png"
 }
